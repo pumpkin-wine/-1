@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoffeeShop - Главная</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="#" id="nav-logo"><i class="fa-solid fa-mug-hot"></i> CoffeeShop</a>
+        </div>
+        <nav>
+            <a href="#" id="nav-catalog">Каталог</a>
+            <a href="#" id="nav-blog">Блог</a>
+            <a href="admin.html" id="admin-nav-link" style="display:none;"><i class="fa-solid fa-user-shield"></i> Админ-панель</a>
+        </nav>
+        <div class="user-controls">
+            <span id="user-greeting" style="color:#aaa; font-size:0.9rem;"></span>
+            <a href="auth.html" id="auth-nav-btn" class="btn-outline"><i class="fa-solid fa-arrow-right-to-bracket"></i> Войти</a>
+            <button id="logout-btn" class="btn-outline" style="display:none;"><i class="fa-solid fa-arrow-right-from-bracket"></i> Выйти</button>
+            <div class="cart-icon" id="cart-btn">
+                <i class="fa-solid fa-cart-shopping"></i> <span id="cart-count">0</span>
+            </div>
+        </div>
+    </header>
+
+<main id="sec-catalog" class="section active">
+    <h2 class="section-title">Каталог</h2>
+    <p style="color: #777; margin-bottom: 20px; font-size: 0.9rem;">
+        <i class="fa-solid fa-circle-info"></i> Для картинок можно использовать ссылки (URL) или пути к файлам (например, <code>images/coffee.jpg</code>).
+    </p>
+    <div class="products-grid" id="products-container"></div>
+</main>
+
+    <main id="sec-cart" class="section">
+        <h2 class="section-title">Ваш заказ</h2>
+        <div id="cart-items"></div>
+        <div class="cart-total">
+            <h3>Итого: <span id="total-price">0</span> ₽</h3>
+            <button id="checkout-btn" class="btn-main">Оформить заказ</button>
+        </div>
+    </main>
+
+    <main id="sec-blog" class="section">
+        <h2 class="section-title">Журнал</h2>
+        <div class="blog-grid" id="blog-container"></div>
+    </main>
+
+    <div id="receipt-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Чек об оплате</h2>
+            <pre id="receipt-text"></pre>
+            <button class="btn-main" style="width:100%;" onclick="window.print()"><i class="fa-solid fa-print"></i> Распечатать</button>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
